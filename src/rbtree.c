@@ -297,8 +297,8 @@ int rbtree_erase(rbtree *t, node_t *remove_node) {
   if (y_color==RBTREE_BLACK)
     rbtree_erase_fixup(t,temp);
   
-  // free(remove_node);
-  // remove_node=NULL;
+  free(remove_node);
+  remove_node=NULL;
 
   
   return 0;
