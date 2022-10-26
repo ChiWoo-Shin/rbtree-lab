@@ -24,7 +24,7 @@ void test_insert_single(const key_t key) {
   assert(p != NULL);
   assert(t->root == p);
   assert(p->key == key);
-  // assert(p->color == RBTREE_BLACK);  // color of root node should be black
+  assert(p->color == RBTREE_BLACK);  // color of root node should be black
 #ifdef SENTINEL
   assert(p->left == t->nil);
   assert(p->right == t->nil);
@@ -265,7 +265,7 @@ void test_color_constraint(const rbtree *t) {
   assert(color_traverse(p, RBTREE_BLACK, 0, nil));
 }
 
-// rbtree should keep search tree and color constraints
+// // rbtree should keep search tree and color constraints
 void test_rb_constraints(const key_t arr[], const size_t n) {
   rbtree *t = new_rbtree();
   assert(t != NULL);
