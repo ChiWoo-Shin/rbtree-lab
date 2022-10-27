@@ -306,10 +306,10 @@ void rbtree_to_array_sub(node_t* k,node_t *nil, key_t *arr, int *index_ptr){
 
 int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
   // TODO: implement to_array
-  int *array_index = calloc(1,sizeof(int));
   int index=0;
   int *index_ptr=&index;
   rbtree_to_array_sub(t->root, t->nil, arr, index_ptr); 
-  free(array_index);
+  
   return 0;
 }
+
